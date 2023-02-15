@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            border: 1px solid darkgray;
+            width: 300px;
+            height: 200px;
+            margin: 5px;
+            padding: 5px
+        }
+        #input {
+            background-color: lightgreen;
+            box-shadow: 0 4px 6px 0
+        }
+        #output {
+            background-color: coral;
+            box-shadow: 0 4px 6px 0
+        }
+    </style>
+</head>
+<body>
+    <h1>Calcolo dislivelli</h1>
+    <div id="input">
+        <label for="st">Altezza iniziale:</label>
+        <input type="text" name="st" id="st">
+        <br><br>
+        <label for="ar">Altezza finale:</label>
+        <input type="text" name="ar" id="ar"><br><br>
+        <button onclick="disla()">Calcolo dislivello andata</button>
+        <br><br>
+        <button onclick="dislr()">Calcolo dislivello ritorno</button>
+        <br><br>
+        <button onclick="dislt()">Calcolo dislivello totale</button>
+    </div>
+    <br>
+    <div id="output">
+        <label for="disla">Dislivello andata:</label><br>
+        <p><var id="disla"></var></p>
+        <label for="dislr">Dislivello ritorno:</label><br>
+        <p><var id="dislr"></var></p>
+        <label for="dislt">Dislivello totale:</label><br>
+        <p><var id="dislt"></var></p>
+    </div>
+    <script>
+        function disla() {
+            let st=0;
+            st=document.getElementById("st").value;
+            let ar=0;
+            ar=document.getElementById("ar").value;
+            let disla=0;
+            disla=ar-st;
+            document.getElementById("disla").innerHTML=disla
+        }
+        function dislr() {
+            let st=0;
+            st=document.getElementById("st").value;
+            let ar=0;
+            ar=document.getElementById("ar").value;
+            let dislr=0;
+            dislr=ar-st;
+            document.getElementById("dislr").innerHTML=dislr
+        }
+        function dislt() {
+            let disla=0;
+            disla=document.getElementById("disla").value;
+            let dislr=0;
+            dislr=document.getElementById("dislr").value;
+            let dislt=0;
+            dislt=disla+dislr;
+            document.getElementById("dislt").innerHTML=dislt
+        }
+    </script>
+</body>
+</html>
