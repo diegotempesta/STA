@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            div {
+                border: 1px solid black;
+                width: 350px;
+                height: 200px;
+                background-color: aquamarine;
+                box-shadow: 0 2px 4px 0 black;
+                padding: 1px
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Calcolatore di tensione elettrica</h1>
+        <div>
+            <p>Resistenza: 3000 Ohm</p>
+            <label for="ce">Corrente elettrica:<input type="text" name="ce" id="ce"></input>A</label>
+            <br>
+            <br>
+            <button onclick="calcTE()">Calcola tensione elettrica</button>
+            <p>Tensione elettrica (in volt):</p>
+            <p id="output"></p>
+            <script>
+                function calcTE() {
+                    let R=3000
+                    let I=document.getElementById("ce").value
+                    let V=R*I
+                    document.getElementById("output").innerHTML=V
+                }
+            </script>
+        </div>
+    </body>
+</html>
