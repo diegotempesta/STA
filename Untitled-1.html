@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Serie e Parallelo</title>
+        <style>
+            #div1 {
+                border: 1px solid black;
+                padding: 5px;
+                width: 300px;
+                height: 400px;
+                background-color: aquamarine;
+            }
+            #div2 {
+                border: 1px solid black;
+                width: 300px;
+                height: 450px;
+                padding: 5px;
+                background-color: darkkhaki;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="div1">
+            <p>Serie</p>
+            <label for="input1">V: </label><input type="number" id="input1" name="input1">
+            <br><br>
+            <label for="input2">I: </label><input type="number" id="input2" name="input2">
+            <br><br>
+            <label for="input3">R1: </label><input type="number" id="input3" name="input3">
+            <br><br>
+            <label for="input4">R2: </label><input type="number" id="input4" name="input4">
+            <br><br>
+            <label for="input5">R3: </label><input type="number" id="input5" name="input5">
+            <br><br>
+            <label for="input6">Rtot: </label><input type="number" id="input6" name="input6">
+            <br><br>
+            <button onclick="serie()">Resistenza</button>
+            <button onclick="serie2()">Serie</button>
+            <br><br>
+            <p id="output1"></p>
+            <br><br>
+            <p id="output2"></p>
+        </div>
+        <br>
+        <div id="div2">
+            <p>Parallelo</p>
+            <label for="input7">V: </label><input type="number" id="input7" name="input7">
+            <br><br>
+            <label for="input11">Itot: </label><input type="number" id="input11" name="input11">
+            <br><br>
+            <label for="input12">R1: </label><input type="number" id="input12" name="input12">
+            <br><br>
+            <label for="input13">R2: </label><input type="number" id="input13" name="input13">
+            <br><br>
+            <label for="input14">R3: </label><input type="number" id="input14" name="input14">
+            <br><br>
+            <label for="input15">Rtot: </label><input type="number" id="input15" name="input15">
+            <br><br>
+            <button onclick="parallelo()">Parallelo</button>
+            <button onclick="parallelo2()">Serie</button>
+            <br>
+            <p id="output3"></p>
+            <br>
+            <p id="output4"></p>
+        </div>
+        <script>
+            function serie() {
+                let V=document.getElementById("input1").value
+                let I=document.getElementById("input2").value
+                let Rtot=V*I
+                document.getElementById("output1").innerHTML=Rtot
+            }
+            function parallelo() {
+                let V=document.getElementById("input7").value
+                let I=document.getElementById("input11").value
+                let Rtot2=V*I
+                document.getElementById("output3").innerHTML=Rtot2
+            }
+            function serie2() {
+                let R1=parseFloat(document.getElementById("input3").value)
+                let R2=parseFloat(document.getElementById("input4").value)
+                let R3=parseFloat(document.getElementById("input5").value)
+                let Rtot3 = (R1 + R2 + R3)*1
+                document.getElementById("output2").innerHTML=Rtot3
+            }
+            function parallelo2() {
+                let R1=document.getElementById("input12").value
+                let R2=document.getElementById("input13").value
+                let R3=document.getElementById("input14").value
+                let Rtot4 = (1/R1 + 1/R2 + 1/R3)**-1
+                document.getElementById("output4").innerHTML=Rtot4
+            }
+        </script>
+    </body>
+</html>
