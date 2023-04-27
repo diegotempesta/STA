@@ -10,13 +10,13 @@
                 border: 1px solid black;
                 padding: 5px;
                 width: 300px;
-                height: 400px;
+                height: 425px;
                 background-color: aquamarine;
             }
             #div2 {
                 border: 1px solid black;
                 width: 300px;
-                height: 450px;
+                height: 425px;
                 padding: 5px;
                 background-color: darkkhaki;
             }
@@ -41,7 +41,6 @@
             <button onclick="serie2()">Serie</button>
             <br>
             <p id="output1"></p>
-            <br>
             <p id="output2"></p>
         </div>
         <br>
@@ -63,7 +62,6 @@
             <button onclick="parallelo2()">Serie</button>
             <br>
             <p id="output3"></p>
-            <br>
             <p id="output4"></p>
         </div>
         <script>
@@ -83,14 +81,14 @@
                 let R1=parseFloat(document.getElementById("input3").value)
                 let R2=parseFloat(document.getElementById("input4").value)
                 let R3=parseFloat(document.getElementById("input5").value)
-                let Rtot3 = (R1 + R2 + R3)*1
+                let Rtot3=R1+R2+R3
                 document.getElementById("output2").innerHTML=Rtot3
             }
             function parallelo2() {
                 let R1=document.getElementById("input12").value
                 let R2=document.getElementById("input13").value
                 let R3=document.getElementById("input14").value
-                let Rtot4 = (1/R1 + 1/R2 + 1/R3)**-1
+                let Rtot4=(1/R1+1/R2+1/R3)**-1
                 document.getElementById("output4").innerHTML=Rtot4
             }
         </script>
