@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>a</title>
+        <style>
+            div {
+                border: 1px solid transparent;
+                margin: 0 auto;
+                background-color: coral;
+                width: 600px;
+                height: 200px
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <form action="">
+                <label for="res">Resistenza: </label><input type="number" name="res" id="res" value="0"><label for="res"> Ohm</label>
+                <br>
+                <label for="int">Intensità di corrente: </label><input type="number" name="int" id="int" value="0"><label for="int"> A</label>
+                <br>
+                <label for="ten">Tensione: </label><input type="number" name="ten" id="ten" value="0"><label for="ten"> V</label>
+                <br>
+                <select name="formula" id="formula">
+                    <option value="cres">Calcola resistenza</option>
+                    <option value="cint">Calcola i. di corrente</option>
+                    <option value="cten">Calcola tensione</option>
+                </select>
+                <input type="submit" value="Calcola">
+                <br>
+                <p>Resistenza: <span id="sres"></span> Ohm</p>
+                <p>Intensità di corrente: <span id="sint"></span> A</p>
+                <p>Tensione: <span id="sten"></span> V</p>
+            </form>
+        </div>
+        <script>
+            let form = document.querySelector('form')
+            form.addEventListener('submit', function(e) {
+                e.preventDefault()
+                let R=parseFloat(this.res.value)
+                let V=parseFloat(this.ten.value)
+                let I=parseFloat(this.int.value)
+                let formula=this.formula.value
+
+                let R2=0
+                let I2=0
+                let V2=0
+                switch (formula) {
+                    case 'cres':
+                        R2=V/I
+                        document.getElementById("sres").innerHTML=R2
+                        break
+                    case 'cint':
+                        I2=V/R
+                        document.getElementById("sint").innerHTML=I2
+                        break
+                    case 'cten':
+                        V2=R*I
+                        document.getElementById("sten").innerHTML=V2
+                        break
+                }
+            })
+        </script>
+    </body>
+</html>
